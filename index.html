@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mi Sitio de Videos</title>
+  <title>payopisao.es</title>
   <style>
     body {
       font-family: sans-serif;
@@ -29,7 +29,6 @@
     h1 {
       text-align: center;
       font-size: large;
-      
     }
     .video-grid {
       display: grid;
@@ -42,15 +41,14 @@
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .thumbnail {
+    .video-card iframe {
       width: 100%;
-      display: block;
-      cursor: pointer;
-    }
-    video {
-      width: 100%;
-      display: none;
+      height: 200px;
+      border: none;
     }
     .title {
       padding: 10px;
@@ -60,21 +58,20 @@
   </style>
 </head>
 <body>
-<div class="header">
-  <img src="payopisao.png" alt="Logo">
-  <div class="header-title"><h1>payopisao.es de aqui pal mundo entero</h1></div>
-</div>
-  <div class="video-grid" id="videoGrid">
-    <!-- Los videos se insertan aquí -->
+  <div class="header">
+    <img src="payopisao.png" alt="Logo">
+    <div class="header-title"><h1>payopisao.es de aqui pal mundo entero</h1></div>
   </div>
 
+  <div class="video-grid" id="videoGrid"></div>
+
   <script>
-    // Lista de tus videos
+    // Lista de videos con IDs de YouTube
     const videos = [
-      { filename: "reaccionlokita.mp4", title: "REACCIONANDO A LOKITA - FUERZA RIGIDA ft. ANUEL AA", thumbnail: "reaccionlokita.png"},
-      { filename: "tusmuertos.mp4", title: "Preview La Fisica de Rober ", thumbnail: "lafisicaderober.png"},
-      { filename: "vlog1.mp4", title: "VLOG #1 - VAMOS AL BUS *lo perdemos?*", thumbnail: "vlog.png"},
-      { filename: "gatagordi.mp4", title: "GataGordi AdriSC X ManuSG Short Version", thumbnail: "gatagordi.png"}
+      { youtubeId: "27uVuUTncBU", title: "REACCIONANDO A LOKITA - FUERZA RIGIDA ft. ANUEL AA" },
+      { youtubeId: "OFgoKD_wq6Y", title: "Preview La Fisica de Rober" },
+      { youtubeId: "4oKq0HhqG48", title: "VLOG #1 - VAMOS AL BUS *lo perdemos?*" },
+      { youtubeId: "CeTVMskFCs0", title: "GataGordi AdriSC X ManuSG Short Version" }
     ];
 
     const grid = document.getElementById("videoGrid");
@@ -83,31 +80,19 @@
       const card = document.createElement("div");
       card.className = "video-card";
 
-      const thumb = document.createElement("img");
-      thumb.src = `thumbnails/${video.thumbnail}`;
-      thumb.alt = video.title;
-      thumb.className = "thumbnail";
-      card.appendChild(thumb);
-
-      const player = document.createElement("video");
-      player.src = `videos/${video.filename}`;
-      player.controls = true;
-      card.appendChild(player);
-
-      thumb.addEventListener("click", () => {
-        thumb.style.display = "none";
-        player.style.display = "block";
-        player.play();
-      });
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube.com/embed/${video.youtubeId}`;
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
 
       const title = document.createElement("div");
       title.className = "title";
       title.textContent = video.title;
-      card.appendChild(title);
 
+      card.appendChild(iframe);
+      card.appendChild(title);
       grid.appendChild(card);
     });
   </script>
-
 </body>
 </html>
