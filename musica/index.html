@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>payopisao.es</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #f0f0f0;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        .header {
+            background: #FF0000;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .header img {
+            height: 50px;
+        }
+
+        .header-title {
+            color: white;
+            font-size: 24px;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        h1 {
+            text-align: right;
+            font-size: large;
+        }
+
+        .menu {
+            margin-left: auto;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {}
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .menu a:hover {
+            color: #d2d2d2;
+        }
+
+        .canciones {
+            margin-top: 20px;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="/payopisao.png" alt="Logo">
+        <div class="header-title">payopisao.es de aqui pal mundo entero</div>
+        <nav class="menu">
+            <ul>
+                <li><a href="/">Videos</a></li>
+                <li><a href="/musica">Música</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="canciones">
+        <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/episode/2B2vXl4w5xIJs47g4HTjW4?utm_source=generator&t=60" width="100%"
+            height="352" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/episode/6eoFb2rZdjPYj9Lk5v5SFv?utm_source=generator&t=60" width="100%"
+            height="352" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+</body>
+
+</html>

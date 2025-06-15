@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>payopisao.es</title>
   <style>
     body {
@@ -11,45 +12,79 @@
       margin: 0;
       padding: 2rem;
     }
+
     .header {
       background: #FF0000;
       display: flex;
       align-items: center;
       padding: 10px 20px;
     }
+
     .header img {
       height: 50px;
     }
+
     .header-title {
       color: white;
       font-size: 24px;
       margin-left: 10px;
       font-weight: bold;
     }
+
     h1 {
-      text-align: center;
+      text-align: right;
       font-size: large;
     }
+
+    .menu {
+      margin-left: auto;
+    }
+
+    .menu ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu li {}
+
+    .menu a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    .menu a:hover {
+      color: #d2d2d2;
+    }
+
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 20px;
       margin-top: 2rem;
     }
+
     .video-card {
       background: white;
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
     .video-card iframe {
       width: 100%;
       height: 200px;
       border: none;
     }
+
     .title {
       padding: 10px;
       font-size: 1rem;
@@ -57,11 +92,19 @@
     }
   </style>
 </head>
+
 <body>
   <div class="header">
     <img src="payopisao.png" alt="Logo">
-    <div class="header-title"><h1>payopisao.es de aqui pal mundo entero</h1></div>
+    <div class="header-title">payopisao.es de aqui pal mundo entero</div>
+    <nav class="menu">
+      <ul>
+        <li><a href="/">Videos</a></li>
+        <li><a href="/musica">Música</a></li>
+      </ul>
+    </nav>
   </div>
+
 
   <div class="video-grid" id="videoGrid"></div>
 
@@ -96,4 +139,5 @@
     });
   </script>
 </body>
+
 </html>
